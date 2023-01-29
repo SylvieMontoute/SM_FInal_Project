@@ -11,7 +11,7 @@
 <!--The user's visible area for responsiveness-->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <!--Defines the title for the page-->
-<link rel="stylesheet" type="text/css" href="project_style.css"/>
+<link rel="stylesheet" type='text/css' href="../css/project_style.css"/>
 <title>Registration Form</title>
 <style>
 </style>
@@ -27,25 +27,26 @@
   <section>
     <article class="form">
   <h3>Registration Form</h3>
-  <form autocomplete="off" action=""method="post">
+  <form autocomplete="off" action=""method="post" onsubmit="return validateform();"name="registration">
     <label for="firstname"><b>First Name</b></label><br/>
-    <input id="firstname" name="firstname" type="text"required/><br/>
+    <input id="firstname"  onblur="return validatefn();" name="firstname" type="text"/><span id="firstnameErr"></span><br/>
     <label for="lastname"><b>Last Name</b></label><br/>
-    <input id="lastname" name="lastname" type="text"required/><br/>
+    <input id="lastname" name="lastname" onblur="return validatefn2();"type="text"/><span id="lastnameErr"></span><br/>
     <label for="dob"><b>Date of Birth</b></label><br/>
-    <input id="dob" name="dob" type="date" required/><br/>
+    <input id="dob" name="dob" type="date"/><span id="dobErr"></span><br/>
     <label for="sex"><b>Sex</b></label><br/>
-    <input name="sex" type="radio" value="female" id="sex"required/>Female<br/>
+    <input name="sex" type="radio" value="female" id="sex"/><span id="sexErr"></span>Female<br/>
     <input name="sex" type="radio" value="male" id="sex"/>Male<br/>
     <input name="sex" type="radio" value="other" id="sex"/>Other<br/>
     <label for="uname"><b>Email Address</b></label><br/>
-    <input id="uname" name="uname" placeholder="Enter Email Address"type="email"required/><br/><br/>
+    <input id="uname" name="uname" placeholder="Enter Email Address"type="email"/><span id="unameErr"></span><br/><br/>
     <label for="uniqueid"><b>Unique ID</b></label><br/>
-    <input id="uniqueid" placeholder="Enter Unique ID"name="uniqueid" type="password" required/><br/>
+    <input id="uniqueid" placeholder="Enter Unique ID"name="uniqueid" type="password"/><span id="uniqueidErr"></span><br/>
           <input name="reset" type="reset"/><br/>
           <input value="Submit" type="submit"/><br/>
   </form>
 </article>
+<script src="../scripts/finalproject.js"></script>
 </body>
 
 </html>
